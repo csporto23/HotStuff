@@ -14,34 +14,21 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //post reservation data
-app.post("/api/characters", function(req, res) {
-    // req.body hosts is equal to the JSON post sent from the user
-    // This works because of our body parsing middleware
-    var reservation = req.body;
-  
-    console.log(newcharacter);
-  
-    // We then add the json the user sent to the character array
-    characters.push(newcharacter);
-  
-    // We then display the JSON to the users
-    res.json(newcharacter);
-  });
 
 //routes for html pages
 app.get("/", function(request, response) {
     response.sendFile(path.join(__dirname, "../front-end/index.html"));
 });
 
-app.get("/reservation-form.html", function(request, response) {
+app.get("/reservation-form", function(request, response) {
     response.sendFile(path.join(__dirname, "../front-end/reservation-form.html"));
 });
 
-app.get("/reservation-view.html", function(request, response) {
+app.get("/reservation-view", function(request, response) {
     response.sendFile(path.join(__dirname, "../front-end/reservation-view.html"));
 });
 
-$("submit-btn").on("click", function() {
+
     app.post("/api/reservations", function(req, res) {
         // req.body hosts is equal to the JSON post sent from the user
         // This works because of our body parsing middleware
@@ -55,7 +42,6 @@ $("submit-btn").on("click", function() {
         // We then display the JSON to the users
         res.json(newReservations);
       });
-});
   
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);

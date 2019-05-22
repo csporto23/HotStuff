@@ -72,6 +72,19 @@
                         </div>
                     </div>
 
-                    <script src="../back-end/logic.js"></script>
+                    <script>
+                      $("#submit-btn").on("click", function (event) {
+                        event.preventDefault();
+                        const newTable = {
+                          name: $("#reserve-name").val().trim(),
+                          phone: $("reserve-phone").val().trim(),
+                          email: $("reserve-email").val().trim(),
+                          id: $("reserve-unique-id").val().trim()
+                        };
+                        $.post("/api/reservations", newTable, function (data) {
+                          console.log(data);
+                        });
+                      });
+                    </script>
 </body>
 </html>
