@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/csporto23/HotStuff/issues"
   },
-  "homepage": "https://github.com/csporto23/HotStuff#readme"
+  "homepage": "https://github.com/csporto23/HotStuff#readme",
+  "dependencies": {
+    "express": "^4.17.0",
+    "fs": "0.0.1-security",
+    "http": "0.0.0",
+    "path": "^0.12.7"
+  }
 }
