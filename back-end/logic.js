@@ -15,5 +15,5 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 app.get("/", function(request, response) {
-    resizeBy.sendFile(path.join(__dirname, "index.html");
+    resizeBy.sendFile(path.join(__dirname, "index.html"));
 });
