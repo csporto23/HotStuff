@@ -30,10 +30,6 @@ app.post("/api/characters", function(req, res) {
 
 //routes for html pages
 app.get("/", function(request, response) {
-<<<<<<< HEAD
-    resizeBy.sendFile(path.join(__dirname, "index.html"));
-});
-=======
     response.sendFile(path.join(__dirname, "../front-end/index.html"));
 });
 
@@ -62,4 +58,3 @@ app.listen(PORT, function() {
     // We then display the JSON to the users
     res.json(newReservations);
   });
->>>>>>> 568e806cf778caed89afac03eedf84fe7af0ee81
