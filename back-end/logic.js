@@ -34,14 +34,17 @@ app.get("/reservation-view", function(request, response) {
         // This works because of our body parsing middleware
         var newReservations = req.body;
       
-        console.log(newReservations);
-      
         // We then add the json the user sent to the character array
         reservations.push(newReservations);
-      
+        console.log(reservations);
         // We then display the JSON to the users
         res.json(newReservations);
       });
+
+      app.get("/api/reservations/:reservation", function(req, res) {
+        for (var i = 0; i < reservations.length; i++) {
+            return res.json(reservations[i]);
+        };
   
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
